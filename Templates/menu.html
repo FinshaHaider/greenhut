@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+    {%block title %}
+        Menu
+    {%endblock%}
+    {%block content %}
+     <div class="container">
+         <h1>Menu</h1>
+        
+             {% comment %} <li>Item Name:{{x.itemname}} </li>
+                 Price: {{x.price}}<br>
+                 Stock Availablity: {{x.stockavailablity}}<br><br>
+                 <hr> {% endcomment %}
+
+         
+         
+
+
+
+     </div>
+     
+     <div class="row">
+        {% for x in menu %}
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card m-4 shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="card-body">
+              <h5 class="card-title">{{x.itemname}}</h5>
+              <p class="card-text">{{x.price}}</p>
+              <p class="card-text">{{x.stockavailabliti}}</p>
+             
+            </div>
+            <button> 
+              <a href="{% url 'cafe_app:updatemenu' x.id%}">Update Menu Items</a>
+              <br>
+              
+              </button>
+              
+              <button> 
+              <a href="{% url 'cafe_app:deletemenu' x.id%}">Delete Menu Items</a><br>
+              </button>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+        <button> 
+        <a href="{% url 'cafe_app:addmenu'%}" class='text-decoration-none m-4 p-2 pt-4'>Add Menu Items</a><br>
+        </button>
+          
+        <button>
+         <a href="{% url 'cafe_app:index'%}" class='text-decoration-none m-4 p-2 pt-4'>Back to Home</a>
+         </button>
+      </div>
+    {%endblock%}
+

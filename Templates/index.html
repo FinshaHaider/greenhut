@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{%block title%}
+HOME PAGE
+{%endblock%}
+
+{% block content  %}
+    
+        
+    <h1 class='text-center'>Explore Our Menu</h1>
+    {% comment %} <img src={% 'image/background_2.jfif' %}> {% endcomment %}
+    {% comment %} <div>
+    {% for x in menu %}
+        <li>Item Name: {{x.itemname}}</li><br>
+            Price: {{x.price}}<br>
+            Stock Availablity: {{x.stockavailablity}}<br><br>
+            <hr>
+
+    {% endfor %}
+    </div> {% endcomment %}
+    <div>
+        <img src='static/images/background_2.jfif' alt='background'>
+        <img src='static/images/background_1.jfif' alt='background' width:'100px'>
+        <img src='static/images/background.jfif' alt='background'>
+    
+    </div>
+    <br>
+    <br>
+    {% comment %}------- card---------- {% endcomment %}
+    {% for x in item %}
+    <div class="card text-center m-4 " style="width: 18rem; display : inline-block;">
+        
+        <img src="{{x.image.url}}" class="card-img-top" alt="..." >
+        
+        <div class="card-body">
+          <h5 class="card-title">{{x.item}}</h5>
+          <a href="{% url 'cafe_app:menu'%}" class="btn btn-primary text-center">More</a> 
+        </div>
+    
+      </div>
+      {% endfor %}
+
+        
+        
+{%endblock%}

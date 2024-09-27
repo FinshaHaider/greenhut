@@ -1,0 +1,34 @@
+ 
+{% extends "base.html" %}
+{% block title %}
+{% endblock %} 
+           
+{% block content %}
+    <div class="row">
+        {% for x in item %}
+            <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card m-4 shadow p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-body">
+                  <h5 class="card-title">{{x.image}}</h5>
+                  <h5 class="card-title">{{x.item}}</h5>
+                 
+                 
+            </div>
+            {% comment %} <form action="{% url 'cafe_app:intex' %}" method="POST" encytype='maltipart/form-data'>
+                {% csrf_token %}
+                 
+                 <label for="itemname">Item Name:</label><br>
+                 <input type="text" id="itemname" name="itemname" required><br>
+                 <label for="price">Price:</label><br>
+                 <input type="number" id="price" name="price" required><br>
+                 <label for="stockavailabliti">Stock Availablity:</label><br>
+                 <input type="text" id="stockavailabliti" name="stockavailabliti" required><br>
+                 <input type="submit" value="Submit">
+                 <button>
+                    <a href="{% url 'cafe_app:menu'%}" class='text-decoration-none m-4 p-2 pt-4'>Back to Menu</a>
+                 </button>
+        
+                 
+            </form> {% endcomment %}
+           
+{% endblock %}

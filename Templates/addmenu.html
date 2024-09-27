@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{%block title%}
+Add menu
+ {%endblock%}
+ {%block content%}
+ <div class="container">
+     <h1>Add Menu Item</h1>
+     <form action="{% url 'cafe_app:addmenu' %}" method="POST" encytype='maltipart/form-data'>
+        {% csrf_token %}
+         
+         <label for="itemname">Item Name:</label><br>
+         <input type="text" id="itemname" name="itemname" required><br>
+         <label for="price">Price:</label><br>
+         <input type="number" id="price" name="price" required><br>
+         <label for="stockavailabliti">Stock Availablity:</label><br>
+         <input type="text" id="stockavailabliti" name="stockavailabliti" required><br>
+         <input type="submit" value="Submit">
+         <button>
+            <a href="{% url 'cafe_app:menu'%}" class='text-decoration-none m-4 p-2 pt-4'>Back to Menu</a>
+         </button>
+
+         
+    </form>
+    
+ </div>
+ {%endblock%}
+
+
+         
